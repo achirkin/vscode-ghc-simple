@@ -24,7 +24,7 @@ export class GhciManager implements Disposable {
 
     constructor(command: string, options: any, ext: ExtensionState) {
         this.proc = null;
-        this.command = command;
+        this.command = 'prlimit -v8192000000 ' + command;
         this.options = options;
         this.output = ext.outputChannel;
         this.wasDisposed = false;
